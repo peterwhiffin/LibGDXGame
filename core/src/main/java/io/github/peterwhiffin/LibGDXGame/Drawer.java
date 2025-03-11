@@ -41,8 +41,8 @@ public class Drawer {
         instance.transform.set(new Vector3(0f, 0f, 10f), new Quaternion(0, 0, 0, 1));
     }
 
-    public void AddModel(Entity entity){
-        models.add(entity.m_model);
+    public void AddModel(ModelInstance model){
+        models.add(model);
     }
 
     public void Draw(){

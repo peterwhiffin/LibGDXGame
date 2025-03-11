@@ -30,15 +30,12 @@ public class Input extends InputAdapter {
 
     @Override
     public boolean mouseMoved(int screenX, int screenY){
-
         newMouse.x = screenX;
         newMouse.y = screenY;
-        //lookInput.set(Gdx.input.getDeltaX(), Gdx.input.getDeltaY());
-
         return true;
     }
 
-    public Vector2 GetMouseDelta(){
+    public Vector2 GetMouseDelta() {
         temp.set(lookInput);
         lookInput.set(0f, 0f);
         return temp;

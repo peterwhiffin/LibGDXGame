@@ -16,7 +16,9 @@ public class World {
 
     public World(Input input, PerspectiveCamera camera, Drawer drawer, Core core){
         Entity cameraTarget = new Entity();
-        player = new Player(input, cameraTarget.transform);
+        ModelInstance arms = new ModelInstance(core.armsModel);
+
+        player = new Player(input, cameraTarget.transform, arms);
         m_cameraController = new CameraController(camera, cameraTarget.transform);
         m_entities = new ArrayList<>();
         m_entities.add(player);
@@ -27,7 +29,8 @@ public class World {
         tree.transform.position = new Vector3(0f, 0f, -10f);
         m_entities.add(tree);
         m_drawer = drawer;
-        m_drawer.AddModel(tree);
+        m_drawer.AddModel(tree.m_model);
+        m_drawer.AddModel(arms);
     }
 
 
